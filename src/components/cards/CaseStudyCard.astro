@@ -1,0 +1,15 @@
+---
+const { alt, src, logo, text } = Astro.props;
+---
+
+<a href="#" class="group relative flex items-end justify-center overflow-hidden">
+    <img
+    alt={alt}
+    src={src}
+    class="brightness-50 absolute inset-0 object-cover w-full h-full group-hover:transition-transform group-hover:scale-110 group-hover:duration-700 duration-700"
+    />
+    <div>
+    <img src={logo} alt="" class="relative z-20 lg:pb-16 w-44">
+    <p class="relative z-20 pb-16 w-44 font-bold text-3xl text-white">{text}</p>
+    </div>
+</a>

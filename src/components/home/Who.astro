@@ -1,0 +1,33 @@
+---
+import FadeText from "../magicui/fade-text";
+---
+
+<section>
+  <div class="py-16">
+    <div
+      class="px-8 lg:px-16 flex w-full justify-between pt-8 md:text-lg lg:text-lg"
+    >
+      <h1 class="">Pick</h1>
+      <h2 class="">Asunción / Paraguay.</h2>
+    </div>
+    <div class="border-t border-gray-400 mx-8 md:mx-8 lg:mx-16"></div>
+
+    <div class="px-8 lg:px-16 py-6">
+      <FadeText
+        client:visible={{ rootMargin: "-300px" }}
+        direction="up"
+        className="duration-200 text-balance md:text-pretty lg:text-pretty indent-8 text-2xl md:text-3xl lg:text-4xl font-medium px-8 lg:px-16 tracking-wide pt-8"
+        text="Ofrecemos servicios diseñados para llevar tu presencia digital al siguiente nivel. Desde diseño web hasta inteligencia artificial, estamos aquí para cumplir con todas tus necesidades digitales."
+      />
+    </div>
+      <div class="flex flex-col items-center justify-center gap-4 pt-16">
+        <h3>Services And Solutions</h3>
+        <a
+          href="#"
+          class="text-center font-medium text-2xl md:text-3xl lg:text-4xl underline underline-offset-4 hover:underline-offset-8"
+        >
+          Explorá nuestros servicios y soluciones.
+        </a>
+      </div>
+  </div>
+</section>

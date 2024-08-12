@@ -1,0 +1,46 @@
+    ---
+    import Logo from "@/assets/icons/Logo.astro"
+    import { ArrowUpRight } from "lucide-react"
+    import ArrowRounded from "@/assets/Arrows/ArrowRounded.astro"
+    ---
+        
+        <!-- Header con Alpine.js para controlar el estado del menú -->
+        <header x-data="{ open: false }" @click.away="open = false" class="bg-transparent z-50 sticky w-full">
+            <!-- Contenedor principal con diseño flexible -->
+            <div class="border border-b-slate-100 container mx-auto flex justify-between items-center px-8 py-2 md:px-[5vw] md:py-3 lg:px-[10vw] lg:py-4">
+                <!-- Sección del logotipo -->
+                <div>
+                    <Logo/>
+                </div>
+                <!-- Navegación (oculta en pantallas pequeñas, visible en pantallas medianas y grandes) -->
+                <nav class="hidden md:flex space-x-10 font-semibold text-sm items-center">
+                    <a href="#" class="hover:text-gray-400 text-slate-800">Inicio</a>
+                    <a href="#" class="hover:text-gray-400 text-slate-800">Proyectos</a>
+                    <a href="#" class="hover:text-gray-400 text-slate-800">Servicios</a>
+                    <a href="#" class="hover:text-gray-400 text-slate-800">Sobre Nosotros</a>
+                </nav>
+                <!-- Botón del menú móvil (visible en pantallas pequeñas) -->
+                <button @click="open = !open" class="md:hidden focus:outline-none">
+                    <!-- Icono del menú usando Lucide Icons, cambia según el estado `open` -->
+                    <template x-if="!open">
+                        <svg class="lucide lucide-menu w-6 h-6" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 8H20M4 16H20" />
+                        </svg>
+                    </template>
+                    <template x-if="open">
+                        <svg class="lucide lucide-x w-6 h-6" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6L6 18M6 6l12 12" />
+                        </svg>
+                    </template>
+                </button>
+            </div>
+            <!-- Menú desplegable (visible en pantallas pequeñas cuando el estado `open` es verdadero) -->
+            <div x-show="open" class="md:hidden h-screen">
+                <nav class="flex flex-col px-8 py-12 space-y-6 font-medium text-3xl">
+                    <a href="#" class="hover:text-gray-400 flex space-x-2 items-end justify-between text-slate-800">Inicio <ArrowRounded/></a>
+                    <a href="#" class="hover:text-gray-400 flex space-x-2 items-end justify-between text-slate-800">Proyectos <ArrowRounded/></a>
+                    <a href="#" class="hover:text-gray-400 flex space-x-2 items-end justify-between text-slate-800">Servicios <ArrowRounded/></a>
+                    <a href="#" class="hover:text-gray-400 flex space-x-2 items-end justify-between text-slate-800">Sobre Nosotros <ArrowRounded/></a>
+                </nav>
+            </div>
+        </header>
